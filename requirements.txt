@@ -1,0 +1,8 @@
+gitpython
+pandas
+matplotlib
+plotly
+nltk
+click
+requests
+beautifulsoup4
