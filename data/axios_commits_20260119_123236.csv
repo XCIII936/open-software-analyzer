@@ -1,0 +1,742 @@
+sha,author_name,author_email,committer_name,committer_email,datetime,message,insertions,deletions,lines_changed,files_changed,parents
+d8233d9e8e9a64bfba9bbe01d475ba417510b82b,Copilot,198982749+Copilot@users.noreply.github.com,GitHub,noreply@github.com,2026-01-12 14:20:00,"fix(types): restore AxiosError.cause type from unknown to Error (#7327)
+
+* Initial plan
+
+* fix(types): restore AxiosError.cause type from unknown to Error
+
+Co-authored-by: jasonsaayman <4814473+jasonsaayman@users.noreply.github.com>
+
+---------
+
+Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>
+Co-authored-by: jasonsaayman <4814473+jasonsaayman@users.noreply.github.com>",11,2,13,3,1
+5945e40bb171d4ac4fc195df276cf952244f0f89,Tackoil,tackoil@outlook.com,GitHub,noreply@github.com,2026-01-08 19:11:34,"fix(interceptor): handle the error in the same interceptor (#6269)
+
+* fix(interceptor): handle the error in the same interceptor
+
+* fix(interceptor): pass the config and data in promise chain
+
+* fix(interceptor): filter out unexpected config and data in promise chain
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",80,2,82,2,1
+7373fbff24cd92ce650d99ff6f7fe08c2e2a0a04,Adam Hines,ahines57@gmail.com,GitHub,noreply@github.com,2025-12-30 12:10:04,"fix: main field in package.json should correspond to cjs artifacts (#5756)
+
+When https://github.com/axios/axios/pull/4787 was implemented, the project was switched to `""type"": ""module""` and ""./index.js"" became an esm file instead of commonjs, however, the ""main"" entry in package.json still points to ""index.js"". As a result, consumers using this field may get unexpected behavior since the main field is supposed to be commonjs if the entry is provided.
+
+Many consumers won't run into this as a practical problem (for example when just doing `const axios = require('axios').default` from inside of a cjs file in node) because the ""exports"" map takes precedence over the main/module fields, but tools that don't parse the object map when resolving still run into problems here.
+
+The fix for this is to just point the ""main"" entry-point to the commonjs artifacts located at ""./dist/node/index.cjs"".
+
+I also added a module entrypoint to improve compatability for the cases where the export map is not used (webpack 4 for example) since that would likely be reading the cjs ""main"" entrypoint now that main has switched back to cjs.
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",2,1,3,1,1
+8d1271b49fc226ed7defd07cd577bd69a55bb13a,Tibor Pilz,tbrpilz@googlemail.com,GitHub,noreply@github.com,2025-12-30 11:58:26,"fix(types): add handlers to AxiosInterceptorManager interface (#5551)
+
+* fix(types): add handlers to AxiosInterceptorManager interface
+
+* fix: runwhen should be optional
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* chore: make handlers optional
+
+* chore: optional handlers
+
+---------
+
+Co-authored-by: Tibor Pilz <tibor.pilz@iu.org>
+Co-authored-by: Jay <jasonsaayman@gmail.com>
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>",40,4,44,2,1
+f8694341deaabd2e81059543fe03f9c791656903,techcodie,bahetianshh@gmail.com,GitHub,noreply@github.com,2025-12-30 11:30:43,"docs: refresh CDN URLs and example JSON headers (#7236)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",7,7,14,6,1
+46db3316ac1579633d82f468181c51186ab3af50,SANDESH LENDVE,123884782+mrsandy1965@users.noreply.github.com,GitHub,noreply@github.com,2025-12-30 11:16:52,"doc: update deprecated var usage in documentation examples (#7246)
+
+* test(http): fix HTTPS protocol test by using local HTTPS server instead of external request
+
+* docs: update var usage in documentation examples
+
+* docs: updated var to const
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",3,3,6,3,1
+d6bbb3db86f3157e406620da8e68cc24cb8b4be9,rohit miryala,39668736+rohitmiryala@users.noreply.github.com,GitHub,noreply@github.com,2025-12-30 11:14:19,"docs: add async/await timeout handling example (#7250)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",22,0,22,1,1
+3141c319c285f4bcb99143e6871fdba5cc89bcf6,Ved Vadnere,vedvadnere@gmail.com,GitHub,noreply@github.com,2025-12-30 11:11:30,"chore: remove unnecessary eslint-disable directive (#7283)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",5,6,11,2,1
+38be3b2e18fd35bc89d46a6cd3fe2379191fd5f6,Akash Dhar Dubey,akashdhar2112@gmail.com,GitHub,noreply@github.com,2025-12-30 11:09:44,"docs: add abort controller example (#7287)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",148,0,148,2,1
+bf3f63237c194e26f23aba066d655c989a93ad5e,Joseph Frazier,1212jtraceur@gmail.com,GitHub,noreply@github.com,2025-12-30 06:10:46,"docs: fix typo in multipart/form-data README section (#7311)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",1,1,2,1,1
+53aa420bb262b78891275adf3150fce046028d2e,dependabot[bot],49699333+dependabot[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-30 06:07:33,"chore(deps): bump the production_dependencies group across 1 directory with 2 updates (#7231)
+
+Bumps the production_dependencies group with 2 updates in the / directory: [follow-redirects](https://github.com/follow-redirects/follow-redirects) and [form-data](https://github.com/form-data/form-data).
+
+
+Updates `follow-redirects` from 1.15.6 to 1.15.11
+- [Release notes](https://github.com/follow-redirects/follow-redirects/releases)
+- [Commits](https://github.com/follow-redirects/follow-redirects/compare/v1.15.6...v1.15.11)
+
+Updates `form-data` from 4.0.4 to 4.0.5
+- [Release notes](https://github.com/form-data/form-data/releases)
+- [Changelog](https://github.com/form-data/form-data/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/form-data/form-data/compare/v4.0.4...v4.0.5)
+
+---
+updated-dependencies:
+- dependency-name: follow-redirects
+  dependency-version: 1.15.11
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+  dependency-group: production_dependencies
+- dependency-name: form-data
+  dependency-version: 4.0.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+  dependency-group: production_dependencies
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Co-authored-by: Jay <jasonsaayman@gmail.com>",12,12,24,1,1
+25446920e3188bebdf94b428c30a9f7f9ddf4bde,dependabot[bot],49699333+dependabot[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-30 06:07:11,"chore(deps): bump peter-evans/create-pull-request (#7303)
+
+Bumps the github-actions group with 1 update: [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request).
+
+
+Updates `peter-evans/create-pull-request` from 7 to 8
+- [Release notes](https://github.com/peter-evans/create-pull-request/releases)
+- [Commits](https://github.com/peter-evans/create-pull-request/compare/v7...v8)
+
+---
+updated-dependencies:
+- dependency-name: peter-evans/create-pull-request
+  dependency-version: '8'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",2,2,4,2,1
+9af869126b679c4be0e00119343feb2462694579,Lubos,lmenus@lmen.us,GitHub,noreply@github.com,2025-12-23 08:14:39,"Add ""API clients"" section to Ecosystem (#7312)
+
+Moved the existing API client generators to their own section and added Hey API",5,1,6,1,1
+21df8edc8a9031ea29b675ccdb4cc9ee89bf7a5b,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-19 06:54:05,"chore(sponsor): update sponsor block (#7308)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",2,2,4,1,1
+d7e60653460480ffacecf85383012ca1baa6263e,Subhan Kumar Rai,raisubhan728@gmail.com,GitHub,noreply@github.com,2025-12-19 00:22:38,"fix(http2): Use port 443 for HTTPS connections by default. (#7256)
+
+Co-authored-by: Dmitriy Mozgovoy <robotshara@gmail.com>",2,1,3,1,1
+0bf4608d606f3c2c01ce9400c32fc9165cfc70b2,Akash Dhar Dubey,akashdhar2112@gmail.com,GitHub,noreply@github.com,2025-12-09 08:57:25,"docs: add typescript example for custom instance (#7288)
+
+* docs: add abort controller example
+
+* docs: add typescript example for custom instance
+
+* Update server.js
+
+* Delete examples/abort-controller/server.js
+
+* Delete examples/abort-controller/index.html
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",19,0,19,1,1
+a4230f5581b3f58b6ff531b6dbac377a4fd7942a,Jay,jasonsaayman@gmail.com,GitHub,noreply@github.com,2025-12-08 12:19:20,"Revert ""fix: silentJSONParsing=false should throw on invalid JSON (#7253) (#7…"" (#7298)
+
+This reverts commit 7d19335e43d6754a1a9a66e424f7f7da259895bf.",2,71,73,2,1
+e0a120620e3728c8161ecdafb4903f373c83673a,Nandan Acharya,samarthachar18@gmail.com,GitHub,noreply@github.com,2025-12-08 06:22:30,"test: add Node unit tests for toFormData and refactor buildURL to avoid param reassignment (#7272)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",60,10,70,2,1
+f7bdcd1b6c6e8a1f47598228193b0a2088dd382c,dependabot[bot],49699333+dependabot[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-08 06:03:45,"chore(deps-dev): bump tar-fs from 2.1.1 to 2.1.4 (#7244)
+
+Bumps [tar-fs](https://github.com/mafintosh/tar-fs) from 2.1.1 to 2.1.4.
+- [Commits](https://github.com/mafintosh/tar-fs/compare/v2.1.1...v2.1.4)
+
+---
+updated-dependencies:
+- dependency-name: tar-fs
+  dependency-version: 2.1.4
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Co-authored-by: Jay <jasonsaayman@gmail.com>",6,6,12,1,1
+7d19335e43d6754a1a9a66e424f7f7da259895bf,Rudransh,message.rudransh@gmail.com,GitHub,noreply@github.com,2025-12-06 08:45:54,"fix: silentJSONParsing=false should throw on invalid JSON (#7253) (#7257)
+
+Co-authored-by: Rudransh Gupta <rudranshgupta@Rudranshs-MacBook-Pro.local>
+Co-authored-by: Jay <jasonsaayman@gmail.com>",71,2,73,2,1
+ec9d94e9f88da13e9219acadf65061fb38ce080a,Nikunj Mochi,71729144+mochinikunj@users.noreply.github.com,GitHub,noreply@github.com,2025-12-06 08:37:24,"feat: add Node.js coverage script using c8 (closes #7289) (#7294)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",470,6,476,2,1
+7764844686b241f346b5a0462942cf20d9781cd1,dependabot[bot],49699333+dependabot[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-06 08:14:04,"chore(deps): bump the github-actions group across 1 directory with 2 updates (#7282)
+
+Bumps the github-actions group with 2 updates in the / directory: [actions/checkout](https://github.com/actions/checkout) and [ffurrer2/extract-release-notes](https://github.com/ffurrer2/extract-release-notes).
+
+
+Updates `actions/checkout` from 5 to 6
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/v5...v6)
+
+Updates `ffurrer2/extract-release-notes` from 2 to 3
+- [Release notes](https://github.com/ffurrer2/extract-release-notes/releases)
+- [Changelog](https://github.com/ffurrer2/extract-release-notes/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/ffurrer2/extract-release-notes/compare/v2...v3)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-version: '6'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+- dependency-name: ffurrer2/extract-release-notes
+  dependency-version: '3'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Co-authored-by: Jay <jasonsaayman@gmail.com>",12,12,24,9,1
+5c7a5cced262d59d9b6d5aa4ef6ed286eb76c028,dependabot[bot],49699333+dependabot[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-06 08:02:25,"chore(deps-dev): bump js-yaml from 3.14.1 to 3.14.2 (#7296)
+
+Bumps [js-yaml](https://github.com/nodeca/js-yaml) from 3.14.1 to 3.14.2.
+- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/nodeca/js-yaml/compare/3.14.1...3.14.2)
+
+---
+updated-dependencies:
+- dependency-name: js-yaml
+  dependency-version: 3.14.2
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",30,30,60,1,1
+2979a9414b9fdbfdfac7b4011c5917283e629c8c,dependabot[bot],49699333+dependabot[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-06 07:47:38,"chore(deps-dev): bump node-forge from 1.3.1 to 1.3.3 (#7293)
+
+Bumps [node-forge](https://github.com/digitalbazaar/forge) from 1.3.1 to 1.3.3.
+- [Changelog](https://github.com/digitalbazaar/forge/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/digitalbazaar/forge/compare/v1.3.1...v1.3.3)
+
+---
+updated-dependencies:
+- dependency-name: node-forge
+  dependency-version: 1.3.3
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",6,7,13,1,1
+88d78842541610692a04282233933d078a8a2552,Anchal Singh,128113546+imanchalsingh@users.noreply.github.com,GitHub,noreply@github.com,2025-12-05 07:12:15,"feat: enhance pipeFileToResponse with error handling (#7169)
+
+* Enhance pipeFileToResponse with error handling
+
+Added error handling for file streaming in pipeFileToResponse function.
+
+* Security: Fix path traversal vulnerability in pipeFileToResponse with input validation and error handling
+
+Security: Enhance file streaming with comprehensive path validation
+
+- Add path traversal protection in pipeFileToResponse function
+- Implement input validation to prevent directory traversal attacks
+- Improve error handling for file read operations with proper status codes
+- Ensure resolved paths stay within intended directory boundaries
+- Add security checks using path.resolve() and startsWith() methods
+- Fix CodeQL ""Uncontrolled data in path expression"" vulnerability
+- Maintain backward compatibility while enhancing security
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",49,5,54,1,1
+86b24235979cc3818327e9c578452496a094dc2d,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-12-05 07:08:26,"chore(sponsor): update sponsor block (#7285)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",6,6,12,1,1
+8092aee7240220aa7913d163187b7fba8d9e5a51,KT0803,krrishtaneja8@gmail.com,GitHub,noreply@github.com,2025-11-18 06:40:53,"chore: remove TODO comment and dead code from http adapter error handler (#7229)
+
+Remove commented-out code marked with @todo remove in the request error
+handler. The code was already disabled and no longer needed.",0,2,2,1,1
+860e03396a536e9b926dacb6570732489c9d7012,Turadg Aleahmad,turadg@aleahmad.net,GitHub,noreply@github.com,2025-11-14 12:26:43,"feat: compatibility with frozen prototypes (#6265)
+
+* fix(types): some JSDoc param defs
+
+* fix: compatibility with HardenedJS
+
+* Update lib/utils.js
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>",23,6,29,1,1
+4d061124521ce28682f54f61aa9915d7187b63a7,Justin Dhillon,justin.singh.dhillon@gmail.com,GitHub,noreply@github.com,2025-11-12 19:49:37,"style: turn '()=>' into '() =>' (#6324)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",29,29,58,11,1
+f73474d02c5aa957b2daeecee65508557fd3c6e5,svihpinc,115612815+svihpinc@users.noreply.github.com,GitHub,noreply@github.com,2025-11-12 19:17:57,"feat(types): Intellisense for string literals in a widened union (#6134)
+
+- see: https://github.com/microsoft/TypeScript/issues/33471#issuecomment-1376364329
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",5,3,8,1,1
+d5b76d4af72cefe24ff3973de0ada6683a362041,Justin Dhillon,justin.singh.dhillon@gmail.com,GitHub,noreply@github.com,2025-11-12 19:11:56,"style: get rid of redundency in imports (#6315)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",12,12,24,9,1
+6ef867e684adf7fb2343e3b29a79078a3c76dc29,Gabriel Quaresma,j.quaresmasantos_98@hotmail.com,GitHub,noreply@github.com,2025-11-12 19:04:39,"fix: unclear error message is thrown when specifying an empty proxy authorization (#6314)
+
+* fix: add AxiosError to Invalid proxy authorization
+
+* fix: minor update
+
+* Update test/unit/adapters/http.js
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* chore: remove redundant check
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* chore: code style
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* chore: style
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* chore: correct assert
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+---------
+
+Co-authored-by: João Gabriel Quaresma de Almeida <joaoGabriel55>
+Co-authored-by: Jay <jasonsaayman@gmail.com>
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>",31,4,35,2,1
+15bf9563f64d8f921668b0eba18033a9add38e94,JohnTitor,1121567132@qq.com,GitHub,noreply@github.com,2025-11-12 06:16:59,"test: correct relationship between filename and test codes (#6155)
+
+Co-authored-by: zhangh-cs <zhangh-cs@glodon.com>
+Co-authored-by: Jay <jasonsaayman@gmail.com>",14,14,28,2,1
+65a7584eda6164980ddb8cf5372f0afa2a04c1ed,Wilson Mun,30316250+wmundev@users.noreply.github.com,GitHub,noreply@github.com,2025-11-11 18:55:10,"feat: add automatic minor and patch upgrades to dependabot (#6053)
+
+* feat: add automatic minor and patch upgrades for npm packages used in axios
+
+* feat: bump up pr limit to 5 for dependency upgrades
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",20,0,20,1,1
+d6682b2035b17a2059f68c29fa6f7ba5c5b55bea,Jake Hayes,thejayhaykid@users.noreply.github.com,GitHub,noreply@github.com,2025-11-11 18:51:46,"chore: add options object to docstring so IDE's indicate it's available (#5999)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",1,0,1,1,1
+b89217e3e91de17a3d55e2b8f39ceb0e9d8aeda8,Jarred Sumner,jarred@jarredsumner.com,GitHub,noreply@github.com,2025-11-11 18:02:35,"fix(package.json): add 'bun' package.json 'exports' condition. Load the Node.js build in Bun instead of the browser build (#5754)
+
+Co-authored-by: Jarred Sumner <709451+Jarred-Sumner@users.noreply.github.com>
+Co-authored-by: Jay <jasonsaayman@gmail.com>",5,1,6,1,1
+1c6a86dd2c0623ee1af043a8491dbc96d40e883b,Julian Dax,julian.dax@posteo.de,GitHub,noreply@github.com,2025-11-11 17:06:10,"fix: turn AxiosError into a native error (#5394) (#5558)
+
+* fix: turn AxiosError into a native error (#5394)
+
+Being an object returned by the 'Error' constructor turns something into a 'native error'.
+
+* fix: simplify code in AxiosError
+
+* fix: simplify code in AxiosError
+
+* refactor: implement AxiosError as a class
+
+* refactor: implement CanceledError as a class
+
+This turns CanceledError into a native error.
+
+* refactor: simplify AxiosError.toJSON
+
+* fix: improve error code handling in `AxiosError.from`
+
+If no error code is provided, use the code from the underlying error.
+
+* fix: set error status in `AxiosError.constructor`
+
+If a response is passed to the constructor, set the response status as a property.
+
+* fix: remove unnecessary async
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",99,120,219,4,1
+5b5c19689209cfd4aa20b14274a6cb03c66ed749,Ashvin Tiwari,ashvintiwari161@gmail.com,GitHub,noreply@github.com,2025-11-11 14:42:13,"docs: add comprehensive migration guide for 0.x to 1.x upgrade (#7218)
+
+Fill empty MIGRATION_GUIDE.md with detailed documentation addressing issue #7208.
+
+This documentation-only change provides solutions for centralized error handling
+in Axios 1.x and comprehensive migration guidance.
+
+Addresses maintainer feedback by excluding all TypeScript modifications.
+
+Fixes #7208",876,2,878,1,1
+7f1fe572504606db075207372c43431b7e87d7fb,WuMingDao,146366930+WuMingDao@users.noreply.github.com,GitHub,noreply@github.com,2025-11-11 06:34:36,"docs: grammar issue in *.md (#7215)
+
+* fix readme.md
+
+* fix ECOSYSTEM.md
+
+* fix CONTRIBUTING.md",36,36,72,3,1
+e6d71017d3dfccb9795b3320291699ca5b2dc7ef,dependabot[bot],49699333+dependabot[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-11-10 14:45:57,"chore(deps): bump the github-actions group across 1 directory with 6 updates (#7148)
+
+Bumps the github-actions group with 6 updates in the / directory:
+
+| Package | From | To |
+| --- | --- | --- |
+| [actions/checkout](https://github.com/actions/checkout) | `4` | `5` |
+| [tj-actions/changed-files](https://github.com/tj-actions/changed-files) | `46` | `47` |
+| [actions/setup-node](https://github.com/actions/setup-node) | `4` | `5` |
+| [github/codeql-action](https://github.com/github/codeql-action) | `3` | `4` |
+| [actions/labeler](https://github.com/actions/labeler) | `5` | `6` |
+| [actions/stale](https://github.com/actions/stale) | `9` | `10` |
+
+
+
+Updates `actions/checkout` from 4 to 5
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/v4...v5)
+
+Updates `tj-actions/changed-files` from 46 to 47
+- [Release notes](https://github.com/tj-actions/changed-files/releases)
+- [Changelog](https://github.com/tj-actions/changed-files/blob/main/HISTORY.md)
+- [Commits](https://github.com/tj-actions/changed-files/compare/v46...v47)
+
+Updates `actions/setup-node` from 4 to 5
+- [Release notes](https://github.com/actions/setup-node/releases)
+- [Commits](https://github.com/actions/setup-node/compare/v4...v5)
+
+Updates `github/codeql-action` from 3 to 4
+- [Release notes](https://github.com/github/codeql-action/releases)
+- [Changelog](https://github.com/github/codeql-action/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/github/codeql-action/compare/v3...v4)
+
+Updates `actions/labeler` from 5 to 6
+- [Release notes](https://github.com/actions/labeler/releases)
+- [Commits](https://github.com/actions/labeler/compare/v5...v6)
+
+Updates `actions/stale` from 9 to 10
+- [Release notes](https://github.com/actions/stale/releases)
+- [Changelog](https://github.com/actions/stale/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/stale/compare/v9...v10)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-version: '5'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+- dependency-name: tj-actions/changed-files
+  dependency-version: '47'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+- dependency-name: actions/setup-node
+  dependency-version: '5'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+- dependency-name: github/codeql-action
+  dependency-version: '4'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+- dependency-name: actions/labeler
+  dependency-version: '6'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+- dependency-name: actions/stale
+  dependency-version: '10'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+  dependency-group: github-actions
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",23,23,46,10,1
+095033c626895ecdcda2288050b63dcf948db3bd,Albie,alberto.sadoc@gmail.com,GitHub,noreply@github.com,2025-11-06 19:15:33,"feat: add `undefined` as a value in AxiosRequestConfig (#5560)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",1,1,2,1,1
+d8bbebf4a4fe3c9e2090b3574156abbd22fdf09a,Eric Dubé,7225168+KernelDeimos@users.noreply.github.com,GitHub,noreply@github.com,2025-11-06 18:39:03,"docs: readme changes (#7042)
+
+* doc: remove note about require and intellisense
+
+This node about using `require()` appears above an example using ES6
+imports, which doesn't follow. I suspect this example was updated and
+removal of the note was overlooked.
+
+* doc: modernize README.md examples with async/await
+
+Many of the examples use `.then()` and `.catch()` when an `await`
+with `try ... catch` would be more concise. This commit does not
+change all examples in recognition of the fact that sometimes
+`.then()` and `.catch()` are more sensible depending on the context.
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",22,40,62,1,1
+3f83143bfe617eec17f9d7dcf8bafafeeae74c26,jasonsaayman,jasonsaayman@gmail.com,jasonsaayman,jasonsaayman@gmail.com,2025-11-06 18:38:28,feat: added copilot instructions,312,0,312,1,1
+92acd4043d0c729a3431587ff25cb4e7777f756b,jasonsaayman,jasonsaayman@gmail.com,jasonsaayman,jasonsaayman@gmail.com,2025-11-06 18:32:37,chore: exclude vscode file,1,0,1,1,1
+c497c4b2c364cae1f960f694e9a547cfbaa4485a,Madhumita,145687605+madhumitaaa@users.noreply.github.com,GitHub,noreply@github.com,2025-11-06 18:29:13,"docs: improved formatting and readability in Code of Conduct (#7198)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",20,68,88,1,1
+38fee81c80c0b366dcd9e70912b1197605b72c7a,Anchal Singh,128113546+imanchalsingh@users.noreply.github.com,GitHub,noreply@github.com,2025-11-06 18:20:31,"chore: enhance form styling and input placeholders in examples (#7185)
+
+* Enhance form styling and input placeholders
+
+* Refactor HTML for multipart form data example
+
+Updated the title and improved styling for better aesthetics. Enhanced the form layout and added theme toggle functionality.
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",495,97,592,1,1
+293a5aecfd3ae56bbe2130fc88cfa77063cf6767,codenomnom,46827243+codenomnom@users.noreply.github.com,GitHub,noreply@github.com,2025-11-06 18:18:14,"docs: clarify interceptors execution order (#7201)
+
+- Add 'Interceptor Execution Order' subsection
+- Document reverse order for request interceptors
+- Document normal order for response interceptors
+- Add examples
+
+Fixes #7200
+
+Co-authored-by: Andrey <codenomnom@users.noreply.github.com>",35,0,35,1,1
+08b84b52d5835d0c7b81049c365c3d271ade8bff,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-11-04 20:00:13,"chore(release): v1.13.2 (#7207)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",23,5,28,5,1
+8d372335f5c50ecd01e8615f2468a9eb19703117,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-11-03 23:08:35,fix(http): fix 'socket hang up' bug for keep-alive requests when using timeouts; (#7206),18,0,18,2,1
+12c314b603e7852a157e93e47edb626a471ba6c5,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-11-03 22:43:10,perf(http): fix early loop exit; (#7202),10,9,19,1,1
+f6d79e773baf70bf4e6d888e72d4bcf589060a84,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-11-03 12:35:24,"chore(sponsor): update sponsor block (#7203)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",1,4,5,1,1
+0588880ac7ddba7594ef179930493884b7e90bf5,Kasper Isager Dalsgarð,kasperisager@hey.com,GitHub,noreply@github.com,2025-10-29 19:10:29,fix(http): use default export for http2 module to support stubs; (#7196),9,9,18,1,1
+1ef8e7218b085ac28b675b07349c6d7906a7b6ac,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-10-28 18:54:35,"chore(release): v1.13.1 (#7194)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",20,8,28,5,1
+bcd5581d208cd372055afdcb2fd10b68ca40613c,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-10-28 18:44:08,fix(http): fixed a regression that caused the data stream to be interrupted for responses with non-OK HTTP statuses; (#7193),18,1,19,2,1
+c9b33712aac00ca6da7e9767426ff2e0a36c7eed,Anchal Singh,128113546+imanchalsingh@users.noreply.github.com,GitHub,noreply@github.com,2025-10-27 19:08:09,"chore: enhance styling and responsiveness in client.html (#7173)
+
+Updated CSS variables for light and dark modes, improved styling for various elements, and added responsive design features.
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",220,111,331,1,1
+9ead04d8abbcd53718dbc31b1250ea74300921c8,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-10-27 16:07:18,[Release] v1.13.0 (#7189),415,376,791,5,1
+d000fbfd0722a9c3bd0bcea3451c6d515813635d,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-10-26 22:46:40,fix(http2): fix possible race condition when handling http2 stream on almost timed out session by improving timeout out algorithm; (#7186),62,21,83,2,1
+08db960d9f1003b3c561026f636df2d6d5d8ca57,Samyak Dandge,141911040+Samy-in@users.noreply.github.com,GitHub,noreply@github.com,2025-10-23 13:20:22,"docs: added example for improved network error handling (with Wrapper/Middleware approach) (#7171)
+
+* Added enhanced network error handling with wrapper approach
+
+This file enhances error handling for network issues in Axios requests, providing detailed messages for various error scenarios.
+
+* Added documentation for my approach to network errors
+
+This document explains how to enhance Axios network error messages to be more descriptive and human-readable. It details the wrapper function and provides examples of usage.
+
+* Update examples/improved-network-errors.md
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* fix: md
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>",134,0,134,2,1
+46e1981d0ff2c6aec794fe3425d031495bc00931,Anchal Singh,128113546+imanchalsingh@users.noreply.github.com,GitHub,noreply@github.com,2025-10-23 13:10:03,"refactor: form data handling in index.html (#7170)
+
+* Refactor form data handling in index.html
+
+* Update examples/postMultipartFormData/index.html
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* Update examples/postMultipartFormData/index.html
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>",53,56,109,1,1
+889f8ef8be025c5c580594f0b631daf50a2d3405,Nikhil Simon Toppo,nikhilsimontoppo@gmail.com,GitHub,noreply@github.com,2025-10-23 12:39:30,"docs: fix mismatched return type (#7172)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",1,1,2,1,1
+7b197ef6ce8e448e6b748749055269e97b10d009,Dhvani Maktuporia,91522146+Dhvani365@users.noreply.github.com,GitHub,noreply@github.com,2025-10-23 12:33:51,fix: sandbox ui updated (#7175),14,5,19,1,1
+6dff629ee78646c92739bf39927d9145906cd430,ikuy1203,79366821+ikuy1203@users.noreply.github.com,GitHub,noreply@github.com,2025-10-20 07:23:22,"chore: fix typos in examples (#7166)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",3,3,6,1,1
+d676df772244726533ca320f42e967f5af056bac,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-10-19 12:06:36,feat(http): add HTTP2 support; (#7150),731,159,890,8,1
+015faeca9f26db76f9562760f04bb9f8229f4db1,Jane Wangari,muriithijane400@gmail.com,GitHub,noreply@github.com,2025-10-16 15:20:26,fix(fetch): prevent TypeError when config.env is undefined (#7155),1,1,2,1,1
+c2911ccc6a143a9abb574e160f6c09d72f5501c9,Aviraj2929,singhaviraj2006@gmail.com,GitHub,noreply@github.com,2025-10-13 12:21:24,"docs: update Features section for clarity and readability (#7136)
+
+* add contributors and documentation
+
+* docs(adapters): add JSDoc for adapters module
+
+* docs: add JSDoc comments to server.js
+
+* docs: update Features section for clarity and readability
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",9,9,18,1,1
+e1f8ae627c2f0e6b01cef3762bba9f34dfc7e47b,Aviraj2929,singhaviraj2006@gmail.com,GitHub,noreply@github.com,2025-10-12 14:49:35,"docs: add JSDoc comments to server.js (#7135)
+
+* add contributors and documentation
+
+* docs(adapters): add JSDoc for adapters module
+
+* docs: add JSDoc comments to server.js
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",95,44,139,1,1
+9b9ec98548d93e9f2204deea10a5f1528bf3ce62,Usama Ayoub,41838423+sam3690@users.noreply.github.com,GitHub,noreply@github.com,2025-10-12 14:47:04,"fix: resolve issue #7131 (added spacing in mergeConfig.js) (#7133)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",4,4,8,1,1
+6e0c8e76a7efbfe38d7a1b00e99d9dd6cfbaa577,Aviraj2929,singhaviraj2006@gmail.com,GitHub,noreply@github.com,2025-10-12 14:38:54,"docs: add jsdoc to adapters (#7134)
+
+* add contributors and documentation
+
+* docs(adapters): add JSDoc for adapters module
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",85,40,125,1,1
+f1c17be4a98832f52967fa0d433c64913fc8c2e4,Amit Verma,amitverma05092006@gmail.com,GitHub,noreply@github.com,2025-10-11 08:43:34,"refactor: improve Cookie Handling (#7129)
+
+* Improve Cookie Handling
+
+* Update lib/helpers/cookies.js
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* Update lib/helpers/cookies.js
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+---------
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>",24,13,37,1,1
+34ed58167f4a6da1266eb2a5df1af1e480267966,Abhishek3880,141427581+abhishekmaniy@users.noreply.github.com,GitHub,noreply@github.com,2025-10-09 07:43:07,"docs: add comprehensive JSDoc documentation to bind helper function (#7119)
+
+- Add complete JSDoc block with parameter descriptions
+  - Include return type and description
+  - Improve code documentation for better developer experience
+  - Follow established JSDoc patterns in the codebase",7,0,7,1,1
+f4970f35b8977940698aeca55627f8dff2ccafb6,Abhishek3880,141427581+abhishekmaniy@users.noreply.github.com,GitHub,noreply@github.com,2025-10-09 07:42:44,"chore: add missing Cloudflare HTTP status codes (#7117)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",6,0,6,1,1
+63066573967913cf2091bd81bb99c49a4c789024,Abhishek3880,141427581+abhishekmaniy@users.noreply.github.com,GitHub,noreply@github.com,2025-10-09 07:27:26,"chore: enhance package.json keywords for better discoverability (#7116)
+
+- Add 'browser', 'fetch', 'rest', 'api', 'client' keywords
+  - Improve npm package discoverability for common HTTP client searches
+  - Better categorize axios functionality for developers
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",6,1,7,1,1
+b8e9958b055e8e8464c80a15fba1d2d8ac11b70f,Abhishek3880,141427581+abhishekmaniy@users.noreply.github.com,GitHub,noreply@github.com,2025-10-09 07:22:50,"docs: improve browser support table accessibility in README (#7115)
+
+- Add proper table headers for better screen reader accessibility
+  - Include descriptive alt text for browser logo images
+  - Restructure table layout for improved readability
+  - Remove redundant IE 11 entry that was misaligned
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",4,3,7,1,1
+793fd4f14d683b55154a9031ffa1c9c291f15fb4,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-10-09 02:04:49,"chore(sponsor): update sponsor block (#7043)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",7,7,14,1,1
+57f07dff82da25b9a335ab24977f2f1e80727880,Aviraj2929,singhaviraj2006@gmail.com,GitHub,noreply@github.com,2025-10-07 17:50:57,docs: add contributors and documentation (#7112),22,0,22,2,1
+d46425e65477b3aa51092add7d0f171dc2e6d73e,prasoon patel,lci2024051@iiitl.ac.in,GitHub,noreply@github.com,2025-10-07 07:34:27,"chore: update footer for light and dark mode (#7099)
+
+Co-authored-by: Prasoon Patel <prasoonpatel@Prasoons-MacBook-Air.local>",167,6,173,1,1
+6a104de7504267b0804380dfc192078447e4bcd5,Rahul Kumar,146073621+jaiyankargupta@users.noreply.github.com,GitHub,noreply@github.com,2025-10-02 18:23:16,chore: add MIT license badge to README (#7073),28,28,56,1,1
+51b23a13b3857fcedaaae74fad898edf36e4ae7a,Supakorn Ieamgomol,supakorn0728@gmail.com,GitHub,noreply@github.com,2025-10-01 15:18:49,docs: fix rate limiting link (#7065),1,1,2,1,1
+54a1fcc1b6a237d591e19825a4c1554227ffaeca,Kian-Meng Ang,kianmeng.ang@gmail.com,GitHub,noreply@github.com,2025-09-19 13:01:16,"docs: fix typos (#7046)
+
+Found via `typos --hidden --format brief`",55,55,110,3,1
+12135b15e560e4c94928eb2f8d11b6e8b7cf1f32,UTSUMI Keiji,k-utsumi@users.noreply.github.com,GitHub,noreply@github.com,2025-09-16 14:04:19,"chore: add alt text to logo image (#7037)
+
+Co-authored-by: Dmitriy Mozgovoy <robotshara@gmail.com>",1,1,2,1,1
+ac3ba6487bffb7fa3a67564b05fa30e22340aa72,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-09-16 13:27:01,chore(ci): fix missed condition to skip test:package step for ignored files; (#7039),1,0,1,1,1
+e9cfed35cfd18778050da9892a29efd8e9fc4d82,Noritaka Kobayashi,arukimedesu1166777@gmail.com,GitHub,noreply@github.com,2025-09-15 06:14:30,chore: remove unused terser-webpack-plugin (#7032),24,509,533,2,1
+e5a33366d75b65f88052b230b103731eb7dcb793,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-09-14 12:58:39,"chore(release): v1.12.2 (#7031)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",19,7,26,5,1
+38726c7586c6a2583b7e7dcdce0c4fedd013055d,Noritaka Kobayashi,arukimedesu1166777@gmail.com,GitHub,noreply@github.com,2025-09-14 09:53:01,"refactor: change if in else to else if (#7028)
+
+Co-authored-by: Jay <jasonsaayman@gmail.com>",2,4,6,1,1
+cf78825e1229b60d1629ad0bbc8a752ff43c3f53,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-09-13 20:24:16,fix(fetch): use current global fetch instead of cached one when env fetch is not specified to keep MSW support; (#7030),40,11,51,2,1
+c26d00f451949306f708aa78d1e9f12b9eb6ff4b,Noritaka Kobayashi,arukimedesu1166777@gmail.com,GitHub,noreply@github.com,2025-09-13 19:10:51,refactor: remove redundant assignment (#7029),0,2,2,1,1
+9fb41a8fcd6f698ee82175c0d9e654b4b0a7081c,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-09-13 14:50:32,chore(ci): add local HTTP server for Karma tests; (#7022),133,5,138,6,1
+19f9f36850210511445c67c865466156d6d1dee2,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-09-13 14:40:04,docs(readme): add custom fetch section; (#7024),74,0,74,1,1
+3cac78c2de2d1d1af0c1b4753feff16c075f01d1,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-09-12 14:18:39,"chore(release): v1.12.1 (#7021)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",16,5,21,5,1
+b5f26b75bdd9afa95016fb67d0cab15fc74cbf05,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-09-12 13:33:42,fix(types): fixed env config types; (#7020),10,4,14,2,1
+0d8ad6e1de0f5339e02bc262d6f0df4936974120,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-09-11 19:32:15,"chore(release): v1.12.0 (#7013)
+
+Co-authored-by: jasonsaayman <4814473+jasonsaayman@users.noreply.github.com>",41,6,47,5,1
+fd7f404488b2c4f238c2fbe635b58026a634bfd2,Jason Saayman,jasonsaayman@gmail.com,Jason Saayman,jasonsaayman@gmail.com,2025-09-11 18:44:16,fix: release pr run,1,1,2,1,1
+a2edc3606a4f775d868a67bb3461ff18ce7ecd11,Jason Saayman,jasonsaayman@gmail.com,Jason Saayman,jasonsaayman@gmail.com,2025-09-11 18:37:08,fix: dont add dist on release,3,3,6,1,1
+9ec86de257bfa33856571036279169f385ed92bd,Jay,jasonsaayman@gmail.com,GitHub,noreply@github.com,2025-09-11 18:25:48,fix: adding build artifacts,1,1,2,1,1
+945435fc51467303768202250debb8d4ae892593,Ameer Assadi,ameerassadime@gmail.com,GitHub,noreply@github.com,2025-09-10 13:08:43,"fix(node): enforce maxContentLength for data: URLs (#7011)
+
+* fix(node): enforce maxContentLength for data: URLs (pre-decode size check)- CVE-2025-58754
+
+* feat(utils): add estimateDataURLDecodedBytes helper and fix duplicate condition in base64 padding check
+
+* feat: add estimateDataURLDecodedBytes helper with tests",123,0,123,4,1
+28e5e3016d6ed0b3ec489427e4ec00133f45ddc2,github-actions[bot],41898282+github-actions[bot]@users.noreply.github.com,GitHub,noreply@github.com,2025-09-06 13:59:31,"chore(sponsor): update sponsor block (#7005)
+
+Co-authored-by: DigitalBrainJS <12586868+DigitalBrainJS@users.noreply.github.com>",7,7,14,1,1
+d03f245a40ec016b190748a865cce9fe3815c903,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-09-04 06:33:40,chore(CI): fixed release info script to use npm registry instead of git as file history source; (#7006),3940,118,4058,4,1
+a0bc91137950f36a1f6b0a2a60d11fd7f245ff0e,Willian Agostini,willian.agostini@gmail.com,GitHub,noreply@github.com,2025-09-03 06:41:23,"chore: removing dist files from src (#7002)
+
+* chore: removing dist files from src
+
+* chore: include build step in CI pipeline
+
+* chore: add build step to PR and publish workflows",5,16755,16760,18,1
+c959ff29013a3bc90cde3ac7ea2d9a3f9c08974b,Dmitriy Mozgovoy,robotshara@gmail.com,GitHub,noreply@github.com,2025-08-30 19:02:24,"feat(fetch): add fetch, Request, Response env config variables for the adapter; (#7003)
+
+* feat(fetch): add fetch, Request, Response env config variables for the adapter;
+
+* feat(fetch): fixed design issue for environments without fetch API globals;",323,175,498,7,1
+a9f47afbf3224d2ca987dbd8188789c7ea853c5d,Emiedonmokumo Dick-Boro,70265727+emiedonmokumo@users.noreply.github.com,GitHub,noreply@github.com,2025-08-25 18:46:53,"fix(fetch-adapter): set correct Content-Type for Node FormData (#6998)
+
+* fix(fetch-adapter): set correct Content-Type for Node FormData
+
+* Update lib/helpers/resolveConfig.js
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+* test(fetch): replace chai expect with Node assert
+
+* fix: define formHeaders for FormData to resolve no-undef error
+
+* fix: filter headers to only update the target headers
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+---------
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+Co-authored-by: Jay <jasonsaayman@gmail.com>",55,35,90,2,1
