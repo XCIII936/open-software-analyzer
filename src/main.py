@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 直接运行分析已下载的axios数据集的脚本
 功能与执行 "python -m src.cli analyze data\axios_commits_20260119_123619.csv" 相同

@@ -7,7 +7,6 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 # 获取项目根目录
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
-# 添加src目录到Python路径（如果需要）
 sys.path.append(PROJECT_ROOT)
 
 # 导入必要的类

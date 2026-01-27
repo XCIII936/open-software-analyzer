@@ -5,11 +5,6 @@ from nltk.corpus import stopwords
 from collections import Counter
 from datetime import datetime
 
-# 注意：使用前请确保已下载必要的NLTK数据
-# 可以通过以下命令下载：
-# nltk.download('stopwords')
-# nltk.download('punkt')
-
 class RepoAnalyzer:
     """
     仓库数据分析器，用于对提交历史数据进行多维度分析

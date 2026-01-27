@@ -1,6 +1,0 @@
-sha,author_name,datetime,message,insertions,deletions,lines_changed,files_changed,parents
-abc123,Alice,2023-01-01 10:00:00,Fix bug in login,10,5,15,2,1
-def456,Bob,2023-01-02 15:30:00,Add new feature,20,0,20,1,1
-ghi789,Alice,2023-01-03 09:15:00,Update documentation,5,2,7,3,1
-jkl012,Charlie,2023-01-04 14:45:00,Fix performance issue,15,10,25,2,1
-mno345,Bob,2023-01-05 11:20:00,Add unit tests,8,3,11,4,1
